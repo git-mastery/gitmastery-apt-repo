@@ -1,0 +1,38 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: GitHub
+Label: GitHub Git-Mastery
+Suite: stable
+Codename: any
+Date: Fri, 04 Jul 2025 16:32:21 UTC
+Architectures: arm64 amd64
+Components: main
+MD5Sum:
+ 41b49609e774bf3b9bf744df8baffa0b 572 main/binary-arm64/Packages
+ 21586ac9a8fe1fcccf406aa2f7220f91 420 main/binary-arm64/Packages.gz
+ 83ada92d2ff816f5f6cfecc63e78ac05 93 main/binary-arm64/Release
+ 0e5b663ddde0f5e3a4f034939bb5102d 572 main/binary-amd64/Packages
+ d93335d8fa0a8afc08bdb5decb6bfffb 424 main/binary-amd64/Packages.gz
+ 74787e7c74320140b170f79fe5e07a06 93 main/binary-amd64/Release
+SHA1:
+ b1eb1cb7d5c6771c3fccdd840aa1d0327a0f6b86 572 main/binary-arm64/Packages
+ 161dfbea8dbdd0d62caacd3732458bfe88c2921d 420 main/binary-arm64/Packages.gz
+ 192f47235144a0c6fc80cf0abf22aa90fe680faf 93 main/binary-arm64/Release
+ eda25e33f6b82e85a2d84ea958eaaab149deee68 572 main/binary-amd64/Packages
+ bde1fc09d4513d8e05572e8afc6d1f2a75e6ffc4 424 main/binary-amd64/Packages.gz
+ 1a7e5487cbf63d9a80b50b6a1f1288d9df080f99 93 main/binary-amd64/Release
+SHA256:
+ adfab9b245630fc29ad551e02e969ea5f987ad73ff972b2da7f3c309d0079002 572 main/binary-arm64/Packages
+ d34ff9b9645d8494ae8d465ee6c7e481b498d8919bf66167dc06eeaec352f9fb 420 main/binary-arm64/Packages.gz
+ 4641b91ef03fe809f956e808e746ccce5bc2caaa8cc323e5a7ce76b7fed80427 93 main/binary-arm64/Release
+ 4a6956df1e90d7477c7951da2c80f3849ad67158c825f24a8661ed14f2147a91 572 main/binary-amd64/Packages
+ e6ef377d1c43803ce26f3b509c9e9de5e51c4c0e0cc05950e9a38d5bf681d219 424 main/binary-amd64/Packages.gz
+ a2426bf137382485d30ddef5c15e8fdd21b48b8114b8b9e82ce35a48e9cc23b2 93 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQQP+TbD+w2J5J2/EkU6KcWSFZbijwUCaGgCFQAKCRA6KcWSFZbi
+j423AP9jbxh19HmlJeuZP2J3EZdtnCHKVupT5k9cNSpAuZcaKQD/SfwUl4zHvvrP
+S8lC4sH2Ek1/1f9aqRsl9caBKzwGQAE=
+=xz8m
+-----END PGP SIGNATURE-----
