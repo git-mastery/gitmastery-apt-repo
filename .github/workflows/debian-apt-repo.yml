@@ -78,5 +78,6 @@ jobs:
       - name: Deploy APT repository to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ORG_PAT }}
           publish_dir: ./repo
+          external_repository: git-mastery/gitmastery-apt-repo
