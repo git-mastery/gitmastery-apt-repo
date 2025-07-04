@@ -45,7 +45,7 @@ jobs:
             FILENAME="gitmastery_${TRIMMED_VERSION}-1_${ARCHITECTURE}.deb"
             curl -L "$DOWNLOAD_URL" -o $FILENAME
 
-            debsigs -v --batch --yes --gpgopts="--batch --no-tty --pinentry-mode=loopback" --sign=origin --default-key="$KEY_ID" gitmastery*.deb
+            debsigs -v --gpgopts="--batch --yes --no-tty --pinentry-mode=loopback" --sign=origin --default-key="$KEY_ID" gitmastery*.deb
 
             TRIMMED_VERSION=${VERSION#v}
             mkdir -p repo/conf
