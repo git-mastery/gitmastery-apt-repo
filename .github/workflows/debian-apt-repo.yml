@@ -45,7 +45,7 @@ jobs:
             FILENAME="gitmastery_${TRIMMED_VERSION}-1_${ARCHITECTURE}.deb"
             curl -L "$DOWNLOAD_URL" -o $FILENAME
 
-            debsigs -v --gpgopts="--batch --no-tty --pinentry-mode=loopback" --sign=origin --default-key="$KEY_ID" gitmastery*.deb
+            debsigs -v --gpgopts="--batch --no-tty --pinentry-mode=loopback" --sign=origin --default-key="$KEY_ID" $FILENAME
 
             TRIMMED_VERSION=${VERSION#v}
             mkdir -p repo/conf
@@ -57,6 +57,7 @@ jobs:
             echo "Architectures: ${ARCHITECTURE}" >>repo/conf/distributions
             echo "SignWith: $KEY_ID" >>repo/conf/distributions
             reprepro -Vb repo includedeb ${DISTRIBUTION} "gitmastery_${TRIMMED_VERSION}-${RELEASE}_${ARCHITECTURE}.deb"
+            tree
             cp pubkey.gpg repo/pubkey.gpg
             cp index.html repo/
           done
