@@ -79,5 +79,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.ORG_PAT }}
-          publish_dir: ./repo
+          publish_dir: ./aptrepo/repo
           external_repository: git-mastery/gitmastery-apt-repo
