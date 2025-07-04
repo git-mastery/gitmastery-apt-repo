@@ -1,14 +1,8 @@
 name: Build & Publish Debian Package
 
 on:
-  push:
-    branches:
-      - main
   workflow_call:
     inputs:
-      architecture:
-        required: true
-        type: string
       version:
         required: true
         type: string
@@ -23,7 +17,6 @@ jobs:
     env:
       DISTRIBUTION: any
       COMPONENT: main
-      ARCHITECTURE: ${{ inputs.architecture }}
       RELEASE: 1
       GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       KEY_ID: ${{ vars.KEY_ID }}
@@ -43,21 +36,36 @@ jobs:
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
           echo "$KEY_ID:6:" |  gpg --batch --import-ownertrust --pinentry-mode=loopback
 
-      - name: Download gitmastery .deb
+      - name: Download gitmastery arm64.deb
         run: |
+          ARCHITECTURE=arm64
           DOWNLOAD_URL=$(curl -s https://api.github.com/repos/git-mastery/app/releases/tags/${VERSION} | jq -r --arg suffix "${ARCHITECTURE}.deb" '.assets[] | select(.name | endswith($suffix)) | .browser_download_url')
           TRIMMED_VERSION=${VERSION#v}
           FILENAME="gitmastery_${TRIMMED_VERSION}-1_${ARCHITECTURE}.deb"
           curl -L "$DOWNLOAD_URL" -o $FILENAME
-
-      - name: Sign Debian package
-        run: |
           debsigs -v --gpgopts="--batch --no-tty --pinentry-mode=loopback" --sign=origin --default-key="$KEY_ID" gitmastery*.deb
-
-      - name: Create APT repository with reprepro
-        run: |
           TRIMMED_VERSION=${VERSION#v}
+          mkdir -p repo/conf
+          echo "Origin: GitHub" >repo/conf/distributions
+          echo "Label: GitHub Git-Mastery" >>repo/conf/distributions
+          echo "Suite: stable" >>repo/conf/distributions
+          echo "Codename: ${DISTRIBUTION}" >>repo/conf/distributions
+          echo "Components: ${COMPONENT}" >>repo/conf/distributions
+          echo "Architectures: ${ARCHITECTURE}" >>repo/conf/distributions
+          echo "SignWith: $KEY_ID" >>repo/conf/distributions
+          reprepro -Vb repo includedeb ${DISTRIBUTION} "gitmastery_${TRIMMED_VERSION}-${RELEASE}_${ARCHITECTURE}.deb"
+          cp pubkey.gpg repo/pubkey.gpg
+          cp index.html repo/
 
+      - name: Download gitmastery amd64.deb
+        run: |
+          ARCHITECTURE=amd64
+          DOWNLOAD_URL=$(curl -s https://api.github.com/repos/git-mastery/app/releases/tags/${VERSION} | jq -r --arg suffix "${ARCHITECTURE}.deb" '.assets[] | select(.name | endswith($suffix)) | .browser_download_url')
+          TRIMMED_VERSION=${VERSION#v}
+          FILENAME="gitmastery_${TRIMMED_VERSION}-1_${ARCHITECTURE}.deb"
+          curl -L "$DOWNLOAD_URL" -o $FILENAME
+          debsigs -v --gpgopts="--batch --no-tty --pinentry-mode=loopback" --sign=origin --default-key="$KEY_ID" gitmastery*.deb
+          TRIMMED_VERSION=${VERSION#v}
           mkdir -p repo/conf
           echo "Origin: GitHub" >repo/conf/distributions
           echo "Label: GitHub Git-Mastery" >>repo/conf/distributions
