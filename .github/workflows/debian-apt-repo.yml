@@ -38,6 +38,7 @@ jobs:
 
       - name: Download gitmastery arm64.deb
         run: |
+          export GPG-TTY=$(tty)
           ARCHITECTURE=arm64
           DOWNLOAD_URL=$(curl -s https://api.github.com/repos/git-mastery/app/releases/tags/${VERSION} | jq -r --arg suffix "${ARCHITECTURE}.deb" '.assets[] | select(.name | endswith($suffix)) | .browser_download_url')
           TRIMMED_VERSION=${VERSION#v}
