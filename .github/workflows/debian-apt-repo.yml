@@ -40,31 +40,39 @@ jobs:
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
           echo "$KEY_ID:6:" |  gpg --batch --import-ownertrust --pinentry-mode=loopback
 
+      - name: Setup repository structure
+        working-directory: aptrepo
+        run: |
+          mkdir -p repo/conf
+          echo "Origin: GitHub" >repo/conf/distributions
+          echo "Label: GitHub Git-Mastery" >>repo/conf/distributions
+          echo "Suite: stable" >>repo/conf/distributions
+          echo "Codename: ${DISTRIBUTION}" >>repo/conf/distributions
+          echo "Components: ${COMPONENT}" >>repo/conf/distributions
+          echo "Architectures: arm64 amd64" >>repo/conf/distributions
+          echo "SignWith: $KEY_ID" >>repo/conf/distributions
+
+          cp pubkey.gpg repo/pubkey.gpg
+          cp index.html repo/
+
       - name: Add .deb
         working-directory: aptrepo
         run: |
           for ARCHITECTURE in "arm64" "amd64"; do
             echo "Publishing for $ARCHITECTURE"
+
             DOWNLOAD_URL=$(curl -s https://api.github.com/repos/git-mastery/app/releases/tags/${VERSION} | jq -r --arg suffix "${ARCHITECTURE}.deb" '.assets[] | select(.name | endswith($suffix)) | .browser_download_url')
             TRIMMED_VERSION=${VERSION#v}
             FILENAME="gitmastery_${TRIMMED_VERSION}-1_${ARCHITECTURE}.deb"
+            TRIMMED_VERSION=${VERSION#v}
+
             curl -L "$DOWNLOAD_URL" -o $FILENAME
 
             debsigs -v --gpgopts="--batch --no-tty --pinentry-mode=loopback" --sign=origin --default-key="$KEY_ID" $FILENAME
 
-            TRIMMED_VERSION=${VERSION#v}
-            mkdir -p repo/conf
-            echo "Origin: GitHub" >repo/conf/distributions
-            echo "Label: GitHub Git-Mastery" >>repo/conf/distributions
-            echo "Suite: stable" >>repo/conf/distributions
-            echo "Codename: ${DISTRIBUTION}" >>repo/conf/distributions
-            echo "Components: ${COMPONENT}" >>repo/conf/distributions
-            echo "Architectures: ${ARCHITECTURE}" >>repo/conf/distributions
-            echo "SignWith: $KEY_ID" >>repo/conf/distributions
             reprepro -Vb repo includedeb ${DISTRIBUTION} "gitmastery_${TRIMMED_VERSION}-${RELEASE}_${ARCHITECTURE}.deb"
+
             tree
-            cp pubkey.gpg repo/pubkey.gpg
-            cp index.html repo/
           done
 
       - name: Deploy APT repository to GitHub Pages
