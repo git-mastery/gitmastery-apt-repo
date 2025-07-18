@@ -1,16 +1,16 @@
 Package: gitmastery
-Version: 3.8.0-1
+Version: 3.9.0-1
 Architecture: amd64
 Maintainer: Jiahao, Woo <woojiahao1234@gmail.com>
 Installed-Size: 26855
 Depends: libc6 (>= 2.35), python3
 Priority: optional
 Section: misc
-Filename: pool/main/g/gitmastery/gitmastery_3.8.0-1_amd64.deb
-Size: 26999780
-SHA256: 62685be57d1a3fa84ac81dfc56a6ac6b9c922e6f591c8cd397d9e52178e1571b
-SHA1: 2737b3a05323004d76cdc6d6177ec65d594c1c37
-MD5sum: 30e06bc58ef6bc4250894bbabc29c91c
+Filename: pool/main/g/gitmastery/gitmastery_3.9.0-1_amd64.deb
+Size: 27000022
+SHA256: f4664b8929633ddb876ca0b7bccdcd07ef7f0024167fc1b985e90d1570535aeb
+SHA1: b0067ab8a0370119cd3c39438789861b1c0c8a75
+MD5sum: 30798933622133e4e486e4e93595fea0
 Description: execute Git-Mastery
   gitmastery is a Git learning tool built by the National University of Singapore School of Computing
 
