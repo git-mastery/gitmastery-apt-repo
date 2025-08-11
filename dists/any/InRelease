@@ -5,34 +5,34 @@ Origin: GitHub
 Label: GitHub Git-Mastery
 Suite: stable
 Codename: any
-Date: Mon, 11 Aug 2025 05:46:09 UTC
+Date: Mon, 11 Aug 2025 14:34:53 UTC
 Architectures: arm64 amd64
 Components: main
 MD5Sum:
- 4107d80330470abb781e7fa23d772541 570 main/binary-arm64/Packages
- 33181b17410c98172e78119f2aa4e19f 420 main/binary-arm64/Packages.gz
+ 3257edd24b69b130780a282ef8bd1824 570 main/binary-arm64/Packages
+ 4518dc333563e53d20492e8f6cfa55b5 419 main/binary-arm64/Packages.gz
  83ada92d2ff816f5f6cfecc63e78ac05 93 main/binary-arm64/Release
- 976ecb16eda52927c8d5c3573fd3ba13 570 main/binary-amd64/Packages
- 49998247f8fa5dac91a6d3deb9d14900 423 main/binary-amd64/Packages.gz
+ f4cd961884202bbf10cc41719ba97628 570 main/binary-amd64/Packages
+ 28baf01bf113536338b1b2c0934684d5 421 main/binary-amd64/Packages.gz
  74787e7c74320140b170f79fe5e07a06 93 main/binary-amd64/Release
 SHA1:
- bb1abd1ef8485830496e6554d7b9cf6cb667fd22 570 main/binary-arm64/Packages
- 3f332585ed4906cf54caca22d1194488aad1debd 420 main/binary-arm64/Packages.gz
+ 0b2c7b0a52240a2c71ea9274a73b58a656bdccfd 570 main/binary-arm64/Packages
+ f7bc54a3c2860f5050047d4c6a8d99abed4b593b 419 main/binary-arm64/Packages.gz
  192f47235144a0c6fc80cf0abf22aa90fe680faf 93 main/binary-arm64/Release
- b114781b474673cdfe09eb61d8217b63c5485b0d 570 main/binary-amd64/Packages
- f2abbcb647328c6547107fab96eaadb9a4d9e77d 423 main/binary-amd64/Packages.gz
+ bb1ec9cbf75e0a0e3900e92cf666796c6ca4348f 570 main/binary-amd64/Packages
+ 214cb9aa9a1f6e072c6099795065a432058bba1e 421 main/binary-amd64/Packages.gz
  1a7e5487cbf63d9a80b50b6a1f1288d9df080f99 93 main/binary-amd64/Release
 SHA256:
- 0c427ba619606aaacc78e28fba6cce3de5e02882e55764556843b814aca7da2d 570 main/binary-arm64/Packages
- d972f76b467b498d9b93b7aa1e5f3521eade34e4814412706ae9e394e6df8c86 420 main/binary-arm64/Packages.gz
+ f61e39b6b35b5275c154985c15b83c712f3290b628ec80032613535762c6c8ff 570 main/binary-arm64/Packages
+ d5701bd34d5161b60f7ceee83c98602d27e6a3d28a08a36e6ee5415a46b90d36 419 main/binary-arm64/Packages.gz
  4641b91ef03fe809f956e808e746ccce5bc2caaa8cc323e5a7ce76b7fed80427 93 main/binary-arm64/Release
- 98b508da6218547ff60998f469817debc397cd00d0bb83e3c3a577ad1354ab7c 570 main/binary-amd64/Packages
- ffaee2aadd8dca20abdb751d74afe09c171ff2f97b2a4a4e29c6fbce2e1e2413 423 main/binary-amd64/Packages.gz
+ f116d9286f8b2e434e1900361299f47ee70e6b8eb8ad8a2a722644edaafe79fb 570 main/binary-amd64/Packages
+ 218674aebe2e5c8ed13a78d26f43c0cd9bf044ef859699338702331829a4a35a 421 main/binary-amd64/Packages.gz
  a2426bf137382485d30ddef5c15e8fdd21b48b8114b8b9e82ce35a48e9cc23b2 93 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQQP+TbD+w2J5J2/EkU6KcWSFZbijwUCaJmDoQAKCRA6KcWSFZbi
-j1CXAP9V8yj8yDPVSeOa6QAgikbVgu+7fcI9CnDr41m51xAM+wEArrxHMfxN2/ba
-Ux05EkTsRgy3b4M9Kf1obzJyzzGKAQU=
-=PQ7Z
+iHUEARYKAB0WIQQP+TbD+w2J5J2/EkU6KcWSFZbijwUCaJn/jQAKCRA6KcWSFZbi
+jyunAP4+duZuwJDXmEs12s2ds7YTKXi4FUtStr5vL6YH57QSzQEAhfp9rfOs9aPa
+LfCcoa67xJTaWugebrZiodqY3Nia1AQ=
+=9gOC
 -----END PGP SIGNATURE-----
