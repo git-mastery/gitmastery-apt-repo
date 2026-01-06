@@ -8,9 +8,9 @@ Priority: optional
 Section: misc
 Filename: pool/main/g/gitmastery/gitmastery_7.4.0-1_amd64.deb
 Size: 27942956
-SHA256: c2c662777367793fc2ebc8c830c9c339d61ef0838778c59dcbfad7d8780b4618
-SHA1: d7237e9a75e9d02e75fd691d7b9d9fa0c26fb69d
-MD5sum: 4ea8047766980dd18d3872eb59d28545
+SHA256: b654962f38320202a654084f10b1f31aa1e7d1b00ce48cbb80aa9bf7dc62b443
+SHA1: 928f8221d613801421f3d56a286fdcda57b9ff0e
+MD5sum: 9186144e38d5b4d85c3c8f3cbea4a669
 Description: execute Git-Mastery
   gitmastery is a Git learning tool built by the National University of Singapore School of Computing
 
